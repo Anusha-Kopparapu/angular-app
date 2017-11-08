@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular App</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<!-- ng-model -->
+<p>Enter your Name</p>
+<div>
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}} <br>
+ <!-- ng-repeat -->
+ <p>Giving names in controller and listing with ng-repeat</p>
+<ul>
+    <li ng-repeat="x in names">
+      {{ x }}
+    </li>
+  </ul>
+  </div>
+  <!-- Created own directive -->
+<div  own-directive></div>
+<!--  Implemented with factory and services -->
+<div>
+<p>Enter a number: <input type = "number" ng-model = "number" /></p>
+         <button ng-click = "square()">X<sup>2</sup></button>
+         <p>Result: {{result}}</p></div>
+         <!-- Promises -->
+<div>
+  <button ng-click='test()'>Click It!!</button><br/>
+  <input type="checkbox" ng-model="fail"/>Fail
+</div><br/>
+<!-- CRUD operations  -->
+<h2>CRUD operations</h2><br/>
+<div>
+  <form>
+    Idd: <input type="text" ng-model="idd"><br><br>
+    Name: <input type="text" ng-model="name"><br><br>
+    Family: <input type="text" ng-model="family"><br><br>
+    continents: <input type="text" ng-model="continents"><br><br>
+    Added: <input type="text" ng-model="added"><br><br>
+    Visible: <input type="text" ng-model="visible"><br><br>
+  </form>
+
+  <button ng-click="get()">GET</button>
+   <button ng-click="post()">SUBMIT</button>
+  <button ng-click="put(name,family,continents)">UPDATE</button>
+  <button ng-click="delete()">DELETE</button>
+     <div ng-repeat="x in birdsapi.Data">
+      {{ x.name }}
+       {{ x.family }}
+        {{ x.continents}}
+    </div>
+    </div>
+<!-- <script src="bower_components/angular/angular.js"></script> -->
+   <script src="bower_components/angular/angular.min.js"></script>
+   <script src="bower_components/angular-route/angular-route.min.js"></script>
+   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+   <script src="app.js"></script>
+</body>
+</html>
